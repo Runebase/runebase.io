@@ -87,18 +87,13 @@ browserify -t vueify -e src/wallet/main.js -o public/javascripts/bundle.js -v
 ```
 
 #### Webpack bundles
+
 ```
 
 npm run webpack
 
 ```
 
-#### Webpack bundles
-```
-
-npm run webpack
-
-```
 #### Nginx Server Block (prod)
 
 ```
