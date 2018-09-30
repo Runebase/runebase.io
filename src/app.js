@@ -28,7 +28,9 @@ app.use('/assets', [
     express.static(__dirname + '/../public/images/'),
     express.static(__dirname + '/../public/css/'),
     express.static(__dirname + '/../public/fonts/'),
-    express.static(__dirname + '/../dist/'),
+    express.static(__dirname + '/../dist/images'),
+    express.static(__dirname + '/../dist/css'),
+    express.static(__dirname + '/../dist/js'),
 ]);
 app.use('/webfonts', [
     express.static(__dirname + '/../node_modules/@fortawesome/fontawesome-free/webfonts/'),

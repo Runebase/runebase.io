@@ -19,6 +19,7 @@
     "bootstrap": "^4.1.2",
     "browserify": "^16.2.2",
     "cookie-parser": "^1.4.3",
+    "copy-webpack-plugin": "^4.5.2",
     "d3": "^5.7.0",
     "exports-loader": "^0.7.0",
     "express-session": "^1.15.6",

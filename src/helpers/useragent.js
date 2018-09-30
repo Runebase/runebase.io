@@ -23,7 +23,7 @@ exports.os = function(req, res, next) {
          break;
     case !!req.headers['user-agent'].match(/Android/):
          res.downloadLink = "https://play.google.com/store/apps/details?id=org.runebase.wallet";
-         res.downloadName = "runebase-0.15.1-win64-setup.exe";
+         res.downloadName = "Google Play";
          break;
     case !!req.headers['user-agent'].match(/Linux/):
          res.downloadLink = "https://downloads.runebase.io/runebase-0.15.1-x86_64-linux-gnu.tar.gz";

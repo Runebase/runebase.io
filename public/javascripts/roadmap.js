@@ -1150,7 +1150,7 @@ TweenMax.to('#changingcolor-dots .st3', 10, {
 ///////////////////////////
 $(function(){
 
-  if ($(window).width() < 768) {
+  if ($("#anouncements .container").width() < 768) {
 
     if ($('.roadmap-timeline-content').hasClass('js--fadeInLeft')) {
       $('.roadmap-timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');

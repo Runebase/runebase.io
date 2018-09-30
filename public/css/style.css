@@ -747,3 +747,10 @@ body {
 .main_top_area .single_slider a{
   line-height: 1.0 !important;
 }
+
+#canvasOne{
+  overflow-x: hidden;
+}
+.sitewrapper {
+    overflow: hidden;
+  }

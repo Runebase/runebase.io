@@ -1,7 +1,7 @@
 'use strict';
 var webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const copyWebpackPlugin = require('copy-webpack-plugin')
 
 var config = {
   context: __dirname + '/', // `__dirname` is root of project and `src` is source
@@ -12,7 +12,7 @@ var config = {
   },
   output: {
     path: __dirname + '/dist', // `dist` is the destination
-    filename: "[name].js"
+    filename: "js/[name].js"
   },
   module: {
     rules: [
@@ -35,7 +35,14 @@ var config = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({filename: "[name].css"})
+    new ExtractTextPlugin({
+      filename: "css/[name].css"
+    }),
+    new copyWebpackPlugin([{
+    from: 'public/images/**',
+    to: 'images', 
+    flatten: true
+    }])
   ]
 };
 
