@@ -27,12 +27,7 @@ npm install browserify -g
 
 ```
 
-Create the bundle with browerify-hmr disabled for production. remove from package before running 'npm i' (needs to be moved to dev-only dependencies). browerify-hmr is used in development only.
-```
-browserify -t vueify -e src/wallet/main.js -o public/javascripts/bundle.js -v
-```
-
-#### Nginx Server Block
+#### Nginx Server Block (dev)
 ```
 server {
   server_name runebase.io www.runebase.io;
@@ -68,26 +63,52 @@ server {
 
 ```
 
-### PlaceHolder
-
-```
-placeholder
-
-```
-
 ## Usage
 
 ### development
 
 ```
 
-npm run dev
+npm run dev (with browserify-hmr)
+
+or
+
+npm start (without browserify-hmr)
 
 ```
+
+### Compiling for production
+
+#### Webwallet bundle
+Create the bundle with browerify-hmr disabled for production. remove from package before running 'npm i' (needs to be moved to dev-only dependencies). browerify-hmr is used in development only.
+
+```
+browserify -t vueify -e src/wallet/main.js -o public/javascripts/bundle.js -v
+```
+
+#### Webpack bundles
+```
+
+npm run webpack
+
+```
+
+#### Webpack bundles
+```
+
+npm run webpack
+
+```
+#### Nginx Server Block (prod)
+
+```
+- Placeholder
+
+```
+
 ### Production
 
 ```
-
-npm start
+- Not Production ready
 
 ```
