@@ -22,16 +22,49 @@ $(document).ready(function(){
     $( "a.nav-link" ).click(function( event ) {
         event.preventDefault();
         $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top + (-72) }, 500);
+        $(".dappoverlay").fadeOut();
+        $("html").css('overflow', 'auto');
     });
 
     //Scroll Menu Event
     $(document).on("scroll", onScroll);
 
+    // Overlays    
+    $('.link-prediction').click(function () {
+        $("html").css('overflow', 'hidden');
+        $('.prediction').fadeIn();
+    });
+    //Close Overlay
+    $('.close').click(function () {
+        $(this).parent().fadeOut();
+        $("html").css('overflow', 'auto');
+    });
+
+    //Hover colors dapps & community links
+    $('.link-dapp, .link-community').hover(function() {
+      $(this).css('color', '#000');
+      $(this).siblings().css('color', '#000');
+    }, function() {
+      $(this).css('color', '#fff');
+      $(this).siblings().css('color', '#fff');
+    });
+
+    $('.link-service').hover(function() {
+      $(this).css('color', '#000');
+      $(this).siblings().css('color', '#000');
+      $(this).parent().children().last().css('color', '#fff');
+    }, function() {
+      $(this).css('color', '#fff');
+      $(this).siblings().css('color', '#fff');
+      $(this).parent().children().last().css('color', '#00B906');
+    });
+
     //Set Wallet Top Navigation Items To Same Width
     var WalletNavItemWidth = Math.max.apply( null, $( '.wallet' ).map( function () {
     return $( this ).outerWidth( true );
     }).get() );
-    $(".wallet").width(WalletNavItemWidth)
+    $(".wallet").width(WalletNavItemWidth);
+
 });
 
 //Scroll Menu event

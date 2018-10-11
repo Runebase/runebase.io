@@ -18,13 +18,21 @@ html(ng-app='myApp')
 	body(ng-controller='MainCtrl', data-spy='scroll', data-target='#navmenu')
 		div.sitewrapper
 				include includes/menu.pug
-
+				section#overlays
+					.dappoverlay.prediction(style='display: none;')
+						a.close
+						.row
+							.overlay-img-div
+								img(src='/assets/prediction.png', alt='Runebase Prediction Logo')
+							.overlay-text
+								h3 Runebase Prediction Market
+								p Comming Soon
 				section#top.top
 					.position-relative
 						// particles.js container
 						#particles-js
 							img.nopointer.position-absolute.bot-0(src='/assets/mountain.png', alt='')
-						.main_top_area.nopointer
+						.main_top_area.shadow-w.nopointer
 							h3.position-relative Runebase
 							p.position-relative Smart-Contract Platform
 							.single_slider.w-100.my-auto
@@ -32,7 +40,7 @@ html(ng-app='myApp')
 								a.btn.btn-lg.showpointer(href=downloadLink)
 									| #{downloadName}
 
-				section#anouncements.anouncements
+				section#anouncements.anouncements.shadow-w
 					.py-5.text-center
 						.lds-roller(ng-show="loading")
 							div
@@ -48,7 +56,7 @@ html(ng-app='myApp')
 								li.center-submenu.text-center.col-md-4(ng-repeat='obj in coinData')
 									p(ng-cloak) {{obj.title}}
 									p(ng-cloak) {{obj.message}}
-				section.roadmap-timeline.timeline-wrapper#roadmap
+				section.shadow-w.roadmap-timeline.timeline-wrapper#roadmap
 					.container.spacer-road
 						.roadmap-timeline-item
 							.roadmap-timeline-img
@@ -766,7 +774,7 @@ html(ng-app='myApp')
 
 				section.wallets#wallets
 					.container.text-center
-						h3.mt-3.mt-md-5 Choose your Runebase Wallet
+						h3.shadow-w.mt-3.mt-md-5 Choose your Runebase Wallet
 						.underline.mx-auto.mb-5
 						div.row
 							div.text-center.col-xs-4.col-lg-4.col-md-4.col-sm-12.col-xs-12
@@ -779,12 +787,12 @@ html(ng-app='myApp')
 					.container.wallet-cat
 						.row.selection#desktop.text-center
 							.col-md-12
-								h3 Core
+								h3.shadow-w Core
 							.col-xs-4.col-lg-4.col-md-6.col-sm-12.col-xs-12.mb-4
 								.row
 									.col-md-12
 										i.fab.fa-windows.brand-icon-size
-										h3 Windows
+										h3.shadow-w Windows
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-win64-setup.exe')
 											p 64bit.exe
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-win64.zip')
@@ -797,7 +805,7 @@ html(ng-app='myApp')
 								.row
 									.col-md-12
 										i.fab.fa-apple.brand-icon-size
-										h3 Mac OS
+										h3.shadow-w Mac OS
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-osx.dmg')
 											p osx.dmg
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-osx.tar.gz')
@@ -810,7 +818,7 @@ html(ng-app='myApp')
 								.row
 									.col-md-12
 										i.fab.fa-linux.brand-icon-size
-										h3 Linux
+										h3.shadow-w Linux
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-x86_64-linux-gnu.tar.gz')
 											p x86_64.tar.gz
 										a.w-100.walletstyle(href='https://downloads.runebase.io/runebase-0.15.1-i686-pc-linux-gnu.tar.gz')
@@ -821,24 +829,24 @@ html(ng-app='myApp')
 											p aarch64.tar.gz
 						.row.selection#mobile.d-none.text-center
 							.col-md-12.text-center
-								h3 Mobile
+								h3.shadow-w Mobile
 							.col-md-6
 								.row
 									.col-md-12
 										i.fab.fa-android.brand-icon-size
-										h3 Android
+										h3.shadow-w Android
 										a.w-100.walletstyle(href='https://play.google.com/store/apps/details?id=org.runebase.wallet')
 											p google play
 							.col-md-6
 								.row
 									.col-md-12
 										i.fab.fa-apple.brand-icon-size
-										h3 IOS
+										h3.shadow-w IOS
 										a.w-100.walletstyle(href='#')
 											p Coming Soon
 						.row#web.selection.d-none
 							.col-md-12.text-center
-								h3 Web
+								h3.shadow-w Web
 								#app
 									block content
 										wallet
@@ -850,71 +858,65 @@ html(ng-app='myApp')
 					.container
 						.row.py-5.text-center
 							.col-md-6.no-padding.col.service-collection.mb-4
-								.single_img
-									a(href='https://explorer.runebase.io')
-										img(src='/assets/explorer.png', alt='')
-								.single_content
-									a.h3.alice(href='https://explorer.runebase.io') Runebase Explorer
-									a(href='https://explorer.runebase.io')
-										p Insight explorer makes it easy to track transactions on runebase chain.
+								a.link-service(href='https://explorer.runebase.io')
+									img(src='/assets/explorer.png', alt='')
+								.seperator
+								a.link-service.h3.alice(href='https://explorer.runebase.io') Runebase Explorer
+								.seperator
+								a.link-service(href='https://explorer.runebase.io')
+									p Insight explorer makes it easy to track transactions on runebase chain.
 							.col-md-6.no-padding.service-collection.mb-4
-								.single_img
-									a(href='https://faucet.runebase.io')
-										img(src='/assets/explorer.png', alt='')
-								.single_content
-									a.h3.alice(href='https://faucet.runebase.io') Runebase Faucet
-									a(href='https://faucet.runebase.io')
-										p A Runebase faucet where you can claim free runes every hour.
+								a.link-service(href='https://faucet.runebase.io')
+									img(src='/assets/explorer.png', alt='')
+								.seperator
+								a.link-service.h3.alice(href='https://faucet.runebase.io') Runebase Faucet
+								.seperator
+								a.link-service(href='https://faucet.runebase.io')
+									p A Runebase faucet where you can claim free runes every hour.
 
 				section#dapps.dapps
 					.dapps_overlay
 						.container.mx-auto.text-center
-							.row.center-block
+							.row.center-block.shadow-w
 								.col.mb-4
-									.single_dapps_img
-										img(src='/assets/award.png', height='128px', width='128px', alt='')
+									img.single_dapps_img.link-dapp.link-prediction.pointer(src='/assets/prediction.png', alt='Runebase Prediction Logo')
 									.separator
-									h3 PlaceHolder
-									p PlaceHolder Text								
+									h5.pointer.link-dapp.link-prediction Runebase Prediction
+									p.pointer.link-dapp.link-prediction Prediction Market for Runebase
 								.col.mb-4
-									.single_dapps_img
-										img(src='/assets/block.png', height='128px', width='128px', alt='')
+									img.pointer.single_dapps_img.link-dapp(src='/assets/block.png', height='128px', width='128px', alt='')
 									.separator
-									h3 PlaceHolder
-									p PlaceHolder Text								
+									h5.pointer.link-dapp PlaceHolder
+									p.pointer.link-dapp PlaceHolder Text
 								.col.mb-4
-									.single_dapps_img
-										img(src='/assets/treasure.png', height='128px', width='128px', alt='')
+									img.pointer.link-dapp.single_dapps_img(src='/assets/treasure.png', height='128px', width='128px', alt='')
 									.separator
-									h3 PlaceHolder
-									p PlaceHolder Text								
+									h5.pointer.link-dapp PlaceHolder
+									p.pointer.link-dapp PlaceHolder Text
 								.col.mb-4
-									.single_dapps_img
-										img(src='/assets/lock.png', height='128px', width='128px', alt='')
+									img.pointer.link-dapp.single_dapps_img(src='/assets/lock.png', height='128px', width='128px', alt='')
 									.separator
-									h3 PlaceHolder
-									p PlaceHolder Text
+									h5.pointer.link-dapp PlaceHolder
+									p.pointer.link-dapp PlaceHolder Text
 
-				section#community.community
+				section#community.community.shadow-w
 					.community_overlay
 						.container.mx-auto.text-center
 							.row.center-block
-								.col.community-collection.mb-4
-									.single_community_img
-										a(href='https://discord.gg/hYhZB9m')
-											img(src='/assets/discord.png', height='128px', width='128px', alt='')
+								.col
+									a.single_community_img.link-community(href='https://discord.gg/hYhZB9m')
+										img(src='/assets/discord.png', height='128px', width='128px', alt='')
 									.separator
-										a.community-text-link(href='https://discord.gg/hYhZB9m')
-											h3 Discord
-											p Contact us on Discord						
-								.col.col.community-collection.mb-4
-									.single_community_img
-										a(href='https://www.medium.com/@runebase')
-											img(src='/assets/medium.png', height='128px', width='128px', alt='')
+									a.community-title.link-community(href='https://discord.gg/hYhZB9m') Discord
 									.separator
-										a.community-text-link(href='https://www.medium.com/@runebase')
-											h3 Medium
-											p Follow us on Medium
+									a.community-text-link.link-community(href='https://discord.gg/hYhZB9m') Contact us on Discord		
+								.col
+									a(href='https://www.medium.com/@runebase')
+										img(src='/assets/medium.png', height='128px', width='128px', alt='')
+									.separator
+									a.community-title.link-community(href='https://www.medium.com/@runebase') Medium
+									.separator
+									a.community-text-link.link-community(href='https://www.medium.com/@runebase') Follow us on Medium
 			
 				section#docs.docs
 					.container
