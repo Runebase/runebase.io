@@ -56,6 +56,43 @@ html(ng-app='myApp')
 								li.center-submenu.text-center.col-md-4(ng-repeat='obj in coinData')
 									p(ng-cloak) {{obj.title}}
 									p(ng-cloak) {{obj.message}}
+
+				section#donate.donate.shadow-w
+					.community_overlay
+						.container.mx-auto.text-center
+							.row.center-block
+								.col
+									h1 Want to see Runebase listed on Exchanges?
+									p Consider donating Dogecoin or buying Runes at 1:2 ratio
+									p 1 DOGE = 2 RUNES
+									a.single_community_img(href='https://discord.gg/hYhZB9m')
+										img(src='/assets/doge.png', height='128px', width='128px', alt='')
+									.separator
+									p.community-title Target
+									.separator
+									p #{dogeProgress}
+									div.progress.progress-striped.active
+										div.progress-bar.progress-bar-success(style='width:'+dogeProgress role='progressbar')
+
+									p.community-text-link #{dogeBalance} / 1000000 DOGE
+							.row.center-block
+								.col
+									h3 Donate
+									p Dogecoin address
+									p DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU
+									.single_community_img
+										img(src='/assets/donationqr.png', height='128px', width='128px', alt='')
+								.col
+									h3 Invest
+									p Contact us to receive your personal deposit address
+									p Discord: Contact "Bagosan Sensei#7842"
+									p Telegram: Contact "Jonass (@Bagosan)"
+									p Twitter: Contact Runebase (@Runebase_Tweet)
+
+							.row.center-block(style={'margin-top': '50px'})
+								.col
+									p(style={'font-size': '16px'}) All sales & donation go directly to covering the costs of Exchange listing.
+
 				section.shadow-w.roadmap-timeline.timeline-wrapper#roadmap
 					.container.spacer-road
 						.roadmap-timeline-item
@@ -932,41 +969,6 @@ html(ng-app='myApp')
 									.separator
 									a.community-text-link.link-community(href='https://twitter.com/Runebase_Tweet') Follow us on Twitter
 
-				section#donate.donate.shadow-w
-					.community_overlay
-						.container.mx-auto.text-center
-							.row.center-block
-								.col
-									h1 Want to see Runebase listed on Exchanges?
-									p Consider donating Dogecoin or buying Runes at 1:2 ratio
-									p 1 DOGE = 2 RUNES
-									a.single_community_img(href='https://discord.gg/hYhZB9m')
-										img(src='/assets/doge.png', height='128px', width='128px', alt='')
-									.separator
-									p.community-title Target
-									.separator
-									p #{dogeProgress}
-									div.progress.progress-striped.active
-										div.progress-bar.progress-bar-success(style='width:'+dogeProgress role='progressbar')
-
-									p.community-text-link #{dogeBalance} / 1000000 DOGE
-							.row.center-block
-								.col
-									h3 Donate
-									p Dogecoin address
-									p DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU
-									.single_community_img
-										img(src='/assets/donationqr.png', height='128px', width='128px', alt='')
-								.col
-									h3 Invest
-									p Contact us to receive your personal deposit address
-									p Discord: Contact "Bagosan Sensei#7842"
-									p Telegram: Contact "Jonass (@Bagosan)"
-									p Twitter: Contact Runebase (@Runebase_Tweet)
-
-							.row.center-block(style={'margin-top': '50px'})
-								.col
-									p(style={'font-size': '16px'}) All sales & donation go directly to covering the costs of Exchange listing.
 				section#docs.docs
 					.container
 						.row

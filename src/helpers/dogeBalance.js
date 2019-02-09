@@ -2,8 +2,15 @@ const fs = require('fs')
 
 exports.doge = function(req, res, next) {
   const calcPercent = function(v, t) {
-    return 100*v/t;
+    return trim(100*v/t, 3);
   };
+  function trim(number, precision){
+    var array = number.toString().split(".");
+    array.push(array.pop().substring(0, precision));
+    var trimmedNumber =  array.join(".");
+    console.log(trimmedNumber);
+    return trimmedNumber;
+  }
 
   fs.readFile('./public/db/dogeBalance', (err, data) => {
     if (err) throw err;
