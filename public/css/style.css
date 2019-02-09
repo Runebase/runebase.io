@@ -197,7 +197,7 @@ body {
     color: #565656;
     width: 100%;
     padding: 0;
-    margin:0; 
+    margin:0;
 }
 
 img {
@@ -312,7 +312,7 @@ p:last-child {
     text-align: center;
 }
 
-/*our dapps section*/ 
+/*our dapps section*/
 .dapps{
     background: #ccc;
 }
@@ -359,15 +359,15 @@ p:last-child {
     color:#fff;
 }
 
-#particles-js{ 
-  position:absolute; width: 100%; 
-  height: 100%; 
-  background-color: #0f0708; 
-  background-image: url(""); 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  background-position: 50% 50%; 
-} 
+#particles-js{
+  position:absolute; width: 100%;
+  height: 100%;
+  background-color: #0f0708;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
 .showpointer{
      pointer-events: all;
 }
@@ -385,10 +385,10 @@ p:last-child {
 
 .layout{
   height: unset !important;
-} 
+}
 .wallets{
     background: linear-gradient(#283048 40%, #ccc 100%, rgba(255, 255, 255, 0));
-  
+
 }
 .services{
   background: linear-gradient(#ccc 40%, #9999ff 100%, rgba(255, 255, 255, 0));
@@ -398,6 +398,10 @@ p:last-child {
 }
 .community{
   background: linear-gradient(#404040 40%, #ccc 100%, rgba(255, 255, 255, 0));
+  padding: 0 0 50px 0;
+}
+.donate{
+  background: linear-gradient(#ccc 40%, #363855 100%, rgba(255, 255, 255, 0));
 }
 
 body {
@@ -405,7 +409,7 @@ body {
 }
 .services h3, .services p, .services a{
     text-shadow:
-   -1px -1px 0 #000,  
+   -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
@@ -414,7 +418,7 @@ body {
 
 
 .walletstyle{
-    border: 2px solid #4CAF50;    
+    border: 2px solid #4CAF50;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -425,7 +429,7 @@ body {
     cursor: pointer;
   color: white;
   text-shadow:
-   -1px -1px 0 #000,  
+   -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
@@ -470,8 +474,8 @@ body {
 }
 
 .underline{
-  width: 50%; 
-  height: 4px; 
+  width: 50%;
+  height: 4px;
   background-color: black;
 }
 
@@ -626,7 +630,7 @@ body {
 
 @media only screen and (max-width: 480px) {
   .nav nav {
-    flex-flow: column nowrap;    
+    flex-flow: column nowrap;
     justify-content: space-around;
     align-items: flex-end;
     align-content: center;
@@ -653,7 +657,7 @@ body {
 }
 
 #mouse{
-    margin-left:auto; 
+    margin-left:auto;
   margin-right:0;
 }
 
@@ -663,7 +667,7 @@ body {
 
 .service-collection p, .service-collection h3, .service-collection a{
         text-shadow:
-   -1px -1px 0 #000,  
+   -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
@@ -671,7 +675,7 @@ body {
 
 .brand-icon-size{
           text-shadow:
-   -1px -1px 0 #000,  
+   -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
@@ -742,7 +746,7 @@ body {
 .shadow-w{
 	color: white;
 	text-shadow:
-    -1px -1px 0 #000,  
+    -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -760,4 +764,107 @@ body {
 .community-text-link{
 	line-height: 1.5rem;
     font-size: 1.1rem;
+}
+
+/*Animated progression bar*/
+
+.progress {
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.progress.progress-xs {
+  height: 5px;
+  margin-top: 5px;
+}
+.progress.progress-sm {
+  height: 10px;
+  margin-top: 5px;
+}
+.progress.progress-lg {
+  height: 25px;
+}
+.progress.vertical {
+  position: relative;
+  width: 20px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.progress.vertical > .progress-bar {
+  width: 100% !important;
+  position: absolute;
+  bottom: 0;
+}
+.progress.vertical.progress-xs {
+  width: 5px;
+  margin-top: 5px;
+}
+.progress.vertical.progress-sm {
+  width: 10px;
+  margin-top: 5px;
+}
+.progress.vertical.progress-lg {
+  width: 30px;
+}
+.progress-bar {
+  background-color: #2196f3;
+  box-shadow: none;
+}
+.progress-bar.text-left {
+  text-align: left;
+}
+.progress-bar.text-left span {
+  margin-left: 10px;
+}
+.progress-bar.text-right {
+  text-align: right;
+}
+.progress-bar.text-right span {
+  margin-right: 10px;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress.active .progress-bar, .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-striped .progress-bar, .progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.progress-bar-secondary {
+  background-color: #323a45;
+}
+.progress-bar-default {
+  background-color: #b0bec5;
+}
+.progress-bar-success {
+  background-color: #64dd17;
+}
+.progress-bar-info {
+  background-color: #29b6f6;
+}
+.progress-bar-warning {
+  background-color: #ffd600;
+}
+.progress-bar-danger {
+  background-color: #ef1c1c;
 }

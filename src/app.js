@@ -1,13 +1,29 @@
-var express = require('express');
-var config = require('./config');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var index = require('./routes/index');
+const express = require('express');
+const config = require('./config');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const index = require('./routes/index');
+const request = require('request')
+     ,url = 'https://dogechain.info/api/v1/address/balance/DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU';
+const fs = require('fs');
+const app = express();
 
-var app = express();
+// Update DogeBalance
+setInterval(function() {
+request(url, (error, response, body)=> {
+    const total = 1000000;
+    if (!error && response.statusCode === 200) {
+      const dogeResponse = JSON.parse(body);
+      fs.writeFileSync('./public/db/dogeBalance',dogeResponse.balance,{encoding:'utf8',flag:'w'});
+      console.log("Got a response: ", dogeResponse.balance);
+    } else {
+      console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    }
+  })
+}, 120 * 1000);
 
 // view engine setup
 

@@ -62,7 +62,7 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.js--fadeInLeft
 								h3.date.timeline__day
-									| 2018 
+									| 2018
 									span Q2
 								.roadmap-text
 									p.timeline__day-sum Start Blockchain Development
@@ -186,7 +186,7 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.roadmap-timeline-card.js--fadeInRight
 								h3.date.timeline__day
-									| 2018 
+									| 2018
 									span Q3
 								.roadmap-text
 									p.timeline__day-sum Launch Desktop & Android Wallets
@@ -196,7 +196,7 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.js--fadeInLeft
 								h3.date.timeline__day
-										| 2018 
+										| 2018
 										span Q4
 								.roadmap-text
 									p.timeline__day-sum Web development
@@ -213,10 +213,10 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.js--fadeInRight
 								h3.date.timeline__day
-										| 2019 
+										| 2019
 										span Q1
-								.roadmap-text 
-									p.timeline__day-sum Prediction Market							
+								.roadmap-text
+									p.timeline__day-sum Prediction Market
 									p.timeline__day-sum IOS Wallet
 									p.timeline__day-sum Dapps
 									svg.spacer-marg(width='200px', height='200px', viewBox='-160 -160 320 320')
@@ -238,10 +238,10 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.roadmap-timeline-card.js--fadeInLeft
 								h3.date.timeline__day
-										| 2019 
+										| 2019
 										span Q2
 								.roadmap-text
-									p.timeline__day-sum Prediction Market 
+									p.timeline__day-sum Prediction Market
 									p.timeline__day-sum IOS Wallet
 									p.timeline__day-sum Dapps
 									p.timeline__day-sum Brainstorming Sessions
@@ -268,9 +268,9 @@ html(ng-app='myApp')
 							.roadmap-timeline-img
 							.roadmap-timeline-content.roadmap-timeline-card.js--fadeInRight
 								h3.date.timeline__day
-										| 2019 
+										| 2019
 										span Q3
-								.roadmap-text 
+								.roadmap-text
 									p.timeline__day-sum
 										| Apply Updates
 									p.timeline__day-sum Dapps
@@ -909,7 +909,7 @@ html(ng-app='myApp')
 									.separator
 									a.community-title.link-community(href='https://discord.gg/hYhZB9m') Discord
 									.separator
-									a.community-text-link.link-community(href='https://discord.gg/hYhZB9m') Contact us on Discord		
+									a.community-text-link.link-community(href='https://discord.gg/hYhZB9m') Talk to us on Discord
 								.col
 									a(href='https://www.medium.com/@runebase')
 										img(src='/assets/medium.png', height='128px', width='128px', alt='')
@@ -917,7 +917,56 @@ html(ng-app='myApp')
 									a.community-title.link-community(href='https://www.medium.com/@runebase') Medium
 									.separator
 									a.community-text-link.link-community(href='https://www.medium.com/@runebase') Follow us on Medium
-			
+								.col
+									a(href='https://t.me/joinchat/KBGO3QwuMu-QTJKgPQjHmg')
+										img(src='/assets/telegram.png', height='128px', width='128px', alt='')
+									.separator
+									a.community-title.link-community(href='https://t.me/joinchat/KBGO3QwuMu-QTJKgPQjHmg') Telegram
+									.separator
+									a.community-text-link.link-community(href='https://t.me/joinchat/KBGO3QwuMu-QTJKgPQjHmg') Talk to us on Telegram
+								.col
+									a(href='https://twitter.com/Runebase_Tweet')
+										img(src='/assets/twitter.png', height='128px', width='128px', alt='')
+									.separator
+									a.community-title.link-community(href='https://twitter.com/Runebase_Tweet') Twitter
+									.separator
+									a.community-text-link.link-community(href='https://twitter.com/Runebase_Tweet') Follow us on Twitter
+
+				section#donate.donate.shadow-w
+					.community_overlay
+						.container.mx-auto.text-center
+							.row.center-block
+								.col
+									h1 Want to see Runebase listed on your favorite Exchanges?
+									p Consider donating Dogecoin or buying Runes at 1:2 ratio
+									p 1 DOGE = 2 RUNES
+									a.single_community_img(href='https://discord.gg/hYhZB9m')
+										img(src='/assets/doge.png', height='128px', width='128px', alt='')
+									.separator
+									p.community-title Target
+									.separator
+									p #{dogeProgress}
+									div.progress.progress-striped.active
+										div.progress-bar.progress-bar-success(style='width:'+dogeProgress role='progressbar')
+
+									p.community-text-link #{dogeBalance} / 1000000 DOGE
+							.row.center-block
+								.col
+									h3 Donate
+									p Dogecoin address
+									p DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU
+									.single_community_img
+										img(src='/assets/donationqr.png', height='128px', width='128px', alt='')
+								.col
+									h3 Invest
+									p Contact us to receive your personal deposit address
+									p Discord: Contact "Bagosan Sensei#7842"
+									p Telegram: Contact "Jonass (@Bagosan)"
+									p Twitter: Contact Runebase (@Runebase_Tweet)
+
+							.row.center-block(style={'margin-top': '50px'})
+								.col
+									p(style={'font-size': '16px'}) All sales & donation go directly to covering the costs of Exchange listing.
 				section#docs.docs
 					.container
 						.row
@@ -943,6 +992,12 @@ html(ng-app='myApp')
 											a(href='https://www.medium.com/@runebase') Medium
 										li
 											a(href='https://www.facebook.com/runebaseofficial') Facebook
+										li
+											a(href='https://twitter.com/Runebase_Tweet') Twitter
+										li
+											a(href='https://t.me/joinchat/KBGO3QwuMu-QTJKgPQjHmg') Telegram Official
+										li
+											a(href='https://t.me/joinchat/IPVfFlPX-ieSK1QxfNc4Jw') Telegram Brazil
 							.col-md-3.col-sm-6.col-xs-12.mb-4
 								.docswithmap_menu
 									h2 Exchanges
