@@ -1,5 +1,3 @@
-const request = require('request')
-     ,url = '';
 const fs = require('fs')
 
 exports.doge = function(req, res, next) {
