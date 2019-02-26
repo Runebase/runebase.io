@@ -37,7 +37,21 @@ request('https://api.coinpaprika.com/v1/ticker/runes-runebase', (error, response
       console.log("Got an error: ", error, ", status code: ", response.statusCode);
     }
   })
-}, 20 * 1000);
+}, 240 * 1000);
+
+// Update supply
+setInterval(function() {
+request('https://explorer.runebase.io/runebase-insight-api/supply', (error, response, body)=> {
+    if (!error && response.statusCode === 200) {
+      const supplyResponse = JSON.parse(body);
+      console.log(supplyResponse);
+      fs.writeFileSync('./public/db/supply',supplyResponse,{encoding:'utf8',flag:'w'});
+      console.log("Got a response: ", supplyResponse);
+    } else {
+      console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    }
+  })
+}, 120 * 1000);
 
 // view engine setup
 
@@ -75,6 +89,14 @@ app.get("/dogebalance", (req, res, next) => {
 app.get("/runesprice", (req, res, next) => {
   res.header("Content-Type",'application/json');
   fs.readFile(__dirname + '/../public/db/runesPrice', (err, json) => {
+        let obj = JSON.parse(json);
+        res.json(obj);
+    });
+  //res.sendFile(path.join(__dirname, '/../public/db/runesPrice'));
+});
+app.get("/supply", (req, res, next) => {
+  res.header("Content-Type",'application/json');
+  fs.readFile(__dirname + '/../public/db/supply', (err, json) => {
         let obj = JSON.parse(json);
         res.json(obj);
     });
