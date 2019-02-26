@@ -316,10 +316,18 @@ p:last-child {
 .dapps{
     background: #ccc;
 }
+.services_overlay{
+    padding: 90px 0px 100px 0px;
+}
 .dapps_overlay{
     padding: 90px 0px 100px 0px;
 }
-
+.community_overlay{
+    padding: 90px 0px 100px 0px;
+}
+.exchanges_overlay{
+    padding: 90px 0px 100px 0px;
+}
 .docs{
     background: #363855;
 }
@@ -400,9 +408,14 @@ p:last-child {
   background: linear-gradient(#404040 40%, #ccc 100%, rgba(255, 255, 255, 0));
   padding: 0 0 50px 0;
 }
+.exchanges{
+  background: linear-gradient(#ccc 40%, #ccc 100%, rgba(255, 255, 255, 0));
+  padding: 0 0 50px 0;
+}
 .donate{
-  background-color:#000002;
-  /* background: linear-gradient(#ccc 40%, #363855 100%, rgba(255, 255, 255, 0)); */
+  /* background-color:#000002; */
+  background: linear-gradient(#ccc 40%, #363855 100%, rgba(255, 255, 255, 0));
+  padding-bottom: 0;
 }
 
 body {
@@ -868,4 +881,7 @@ body {
 }
 .progress-bar-danger {
   background-color: #ef1c1c;
+}
+.specifications p{
+  margin: 0;
 }

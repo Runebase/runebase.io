@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "webpack": "webpack -p",
-    "dev": "watchify -vd -p browserify-hmr -t vueify -e src/wallet/main.js -o public/javascripts/bundle.js & nodemon ./src/bin/www",
+    "dev": "nodemon ./src/bin/www",
+    "dev:wallet": "watchify -vd -p browserify-hmr -t vueify -e src/wallet/main.js -o public/javascripts/bundle.js & nodemon ./src/bin/www",
     "start": "node ./src/bin/www"
   },
   "dependencies": {

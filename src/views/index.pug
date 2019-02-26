@@ -52,50 +52,11 @@ html(ng-app='myApp')
 							div
 							div
 						.container
-							ul.d-flex.justify-content-around.justify-content-md-center.list-unstyled.categories(ng-controller="myController")
-								li.center-submenu.text-center.col-md-4(ng-repeat='obj in coinData')
+							ul.row.d-flex.justify-content-around.justify-content-md-center.list-unstyled.categories(ng-controller="myController")
+								li.specifications.center-submenu.text-center.col-md-4.spacer-road(ng-repeat='obj in coinData')
 									p(ng-cloak) {{obj.title}}
 									p(ng-cloak) {{obj.message}}
-
-				section#donate.donate.shadow-w
-					.community_overlay
-						.container.mx-auto.text-center
-							.row.center-block
-								.col
-									h1 Get Runebase listed on Exchanges
-									p Consider donating Dogecoin or buying Runes at 1:2 ratio
-									p 1 DOGE = 2 RUNES
-									a.single_community_img(href='https://discord.gg/hYhZB9m')
-										img(src='/assets/doge.png', height='128px', width='128px', alt='')
-									.separator
-									p.community-title Target
-									.separator
-									p #{dogeProgress}
-									div.progress.progress-striped.active
-										div.progress-bar.progress-bar-success(style='width:'+dogeProgress role='progressbar')
-
-									p.community-text-link #{dogeBalance} / 1000000 DOGE
-							.row.center-block
-								.col
-									h3 Donate
-									p Dogecoin address
-									p DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU
-									.single_community_img
-										img(src='/assets/donationqr.png', height='128px', width='128px', alt='')
-								.col
-									h3 Purchase
-									a(href='https://altmarkets.io/trading/runesdoge')
-										p https://altmarkets.io
-									a(href='https://wadax.io/trade/RUNESBTC')
-										p https://wadax.io
-									p Or
-									p Contact us to receive your personal deposit address									
-									p Discord: Contact "Bagosan Sensei#7842"
-									p Telegram: Contact "Jonass (@Bagosan)"
-
-							.row.center-block(style={'margin-top': '50px'})
-								.col
-									p(style={'font-size': '16px'}) All sales & donation go directly to covering the costs of Exchange listing.
+				
 
 				section.shadow-w.roadmap-timeline.timeline-wrapper#roadmap
 					.container.spacer-road
@@ -905,7 +866,7 @@ html(ng-app='myApp')
 								a.link-service.h3.alice(href='https://explorer.runebase.io') Runebase Explorer
 								.seperator
 								a.link-service(href='https://explorer.runebase.io')
-									p Insight explorer makes it easy to track transactions on runebase chain.
+									p Insight explorer makes it easy to track transactions on the Runebase Blockchain.
 							.col-md-6.no-padding.service-collection.mb-4
 								a.link-service(href='https://faucet.runebase.io')
 									img(src='/assets/explorer.png', alt='')
@@ -913,7 +874,7 @@ html(ng-app='myApp')
 								a.link-service.h3.alice(href='https://faucet.runebase.io') Runebase Faucet
 								.seperator
 								a.link-service(href='https://faucet.runebase.io')
-									p A Runebase faucet where you can claim free runes every hour.
+									p A Runebase faucet where you can claim free runes every 30 minutes.
 
 				section#dapps.dapps
 					.dapps_overlay
@@ -952,27 +913,76 @@ html(ng-app='myApp')
 									.separator
 									a.community-text-link.link-community(href='https://discord.gg/hYhZB9m') Talk to us on Discord
 								.col
-									a(href='https://www.medium.com/@runebase')
+									a.single_community_img.link-community(href='https://www.medium.com/@runebase')
 										img(src='/assets/medium.png', height='128px', width='128px', alt='')
 									.separator
 									a.community-title.link-community(href='https://www.medium.com/@runebase') Medium
 									.separator
 									a.community-text-link.link-community(href='https://www.medium.com/@runebase') Follow us on Medium
 								.col
-									a(href='https://t.me/joinchat/IPVfFlPX-ieSK1QxfNc4Jw')
+									a.single_community_img.link-community(href='https://t.me/joinchat/IPVfFlPX-ieSK1QxfNc4Jw')
 										img(src='/assets/telegram.png', height='128px', width='128px', alt='')
 									.separator
 									a.community-title.link-community(href='https://t.me/joinchat/IPVfFlPX-ieSK1QxfNc4Jw') Telegram
 									.separator
 									a.community-text-link.link-community(href='https://t.me/joinchat/IPVfFlPX-ieSK1QxfNc4Jw') Talk to us on Telegram
 								.col
-									a(href='https://twitter.com/Runebase_Tweet')
+									a.single_community_img.link-community(href='https://twitter.com/Runebase_Tweet')
 										img(src='/assets/twitter.png', height='128px', width='128px', alt='')
 									.separator
 									a.community-title.link-community(href='https://twitter.com/Runebase_Tweet') Twitter
 									.separator
 									a.community-text-link.link-community(href='https://twitter.com/Runebase_Tweet') Follow us on Twitter
 
+				section#exchanges.exchanges.shadow-w
+					.community_overlay
+						.container.mx-auto.text-center
+							.row.center-block
+								.col
+									a.single_community_img.link-community(href='https://altmarkets.io/trading/runesdoge')
+										img(src='/assets/altmarkets.png', height='128px', width='128px', alt='')
+									.separator
+									a.community-title.link-community(href='https://altmarkets.io/trading/runesdoge') AltMarkets
+									.separator
+									a.community-text-link.link-community(href='https://altmarkets.io/trading/runesdoge') Trade on Altmarkets
+								.col
+									a.single_community_img.link-community(href='https://wadax.io/trade/RUNESBTC')
+										img(src='/assets/wadax.png', height='128px', width='128px', alt='')
+									.separator
+									a.community-title.link-community(href='https://wadax.io/trade/RUNESBTC') Wadax
+									.separator
+									a.community-text-link.link-community(href='https://wadax.io/trade/RUNESBTC') Trade on Wadax
+
+				section#donate.donate.shadow-w.exchanges
+					.community_overlay#donate.donate.shadow-w.exchanges
+						.container.mx-auto.text-center
+							.row.center-block
+								.col
+									h1 Get Runebase listed on more Exchanges
+									p Consider donating Dogecoin or buying Runes at 1:2 ratio
+									p 1 DOGE = 2 RUNES
+									a.single_community_img(href='https://discord.gg/hYhZB9m')
+										img(src='/assets/doge.png', height='128px', width='128px', alt='')
+									.separator
+									p.community-title Target
+									.separator
+									p #{dogeProgress}
+									div.progress.progress-striped.active
+										div.progress-bar.progress-bar-success(style='width:'+dogeProgress role='progressbar')
+
+									p.community-text-link #{dogeBalance} / 1000000 DOGE
+							.row.center-block
+								.col
+									h3 Donate
+									p Dogecoin address
+									p DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU
+									.single_community_img
+										img(src='/assets/donationqr.png', height='128px', width='128px', alt='')
+
+							.row.center-block(style={'margin-top': '50px'})
+								.col
+									p(style={'font-size': '16px'}) All sales & donation go directly to covering the costs of Exchange listing.
+								
 				section#docs.docs
 					.container
 						.row
@@ -982,6 +992,8 @@ html(ng-app='myApp')
 									ul.footer_menu
 										li
 											a(href='https://github.com/Runebase/runebase/wiki/Staking') How to Stake?
+										li
+											a(href='https://github.com/Runebase/runebase/wiki/rrc223') Create RRC223 Token
 							.col-md-3.col-sm-6.col-xs-12.mb-4
 								.docswithmap_menu
 									h2 Resources

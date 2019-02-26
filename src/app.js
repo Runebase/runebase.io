@@ -25,6 +25,20 @@ request(url, (error, response, body)=> {
   })
 }, 120 * 1000);
 
+
+// Update runesPrice
+setInterval(function() {
+request('https://api.coinpaprika.com/v1/ticker/runes-runebase', (error, response, body)=> {
+    if (!error && response.statusCode === 200) {
+      const runesResponse = JSON.parse(body);
+      fs.writeFileSync('./public/db/runesPrice',runesResponse.price_usd,{encoding:'utf8',flag:'w'});
+      console.log("Got a response: ", runesResponse.price_usd);
+    } else {
+      console.log("Got an error: ", error, ", status code: ", response.statusCode);
+    }
+  })
+}, 20 * 1000);
+
 // view engine setup
 
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +62,25 @@ app.use('/assets', [
     express.static(__dirname + '/../dist/css'),
     express.static(__dirname + '/../dist/js'),
 ]);
+
+// Get Routes
+app.get("/dogebalance", (req, res, next) => {
+  res.header("Content-Type",'application/json');
+  fs.readFile(__dirname + '/../public/db/dogeBalance', (err, json) => {
+        let obj = JSON.parse(json);
+        res.json(obj);
+    });
+  //res.sendFile(path.join(__dirname, '/../public/db/dogeBalance'));
+});
+app.get("/runesprice", (req, res, next) => {
+  res.header("Content-Type",'application/json');
+  fs.readFile(__dirname + '/../public/db/runesPrice', (err, json) => {
+        let obj = JSON.parse(json);
+        res.json(obj);
+    });
+  //res.sendFile(path.join(__dirname, '/../public/db/runesPrice'));
+});
+
 app.use('/webfonts', [
     express.static(__dirname + '/../node_modules/@fortawesome/fontawesome-free/webfonts/'),
 ]);
