@@ -51,7 +51,7 @@
     "vue-clipboard2": "0.0.6",
     "vueify": "^9.4.1",
     "vuetify": "^0.16.9",
-    "watchify": "^3.11.0"
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.2",
