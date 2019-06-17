@@ -3,7 +3,7 @@ var bodyParser  = require("body-parser");
 var express = require('express');
 var session = require('express-session');
 var userAgent = require('../helpers/useragent').os;
-var doge = require('../helpers/dogeBalance').doge;
+var doge = require('../helpers/runesBalance').doge;
 var router = express.Router();
 
 router.use(session({
@@ -22,8 +22,8 @@ router.get('/wallet', (req, res, next) => {
 })
 
 router.get('/', function (req, res) {
-    console.log(res.dogeBalance);
-    res.render('index', {downloadName: res.downloadName, downloadLink: res.downloadLink, dogeBalance: res.dogeBalance, dogeProgress: res.dogeProgress})
+    console.log(res.runesBalance);
+    res.render('index', {downloadName: res.downloadName, downloadLink: res.downloadLink, runesBalance: res.runesBalance, runesProgress: res.runesProgress})
 });
 
 module.exports = router;

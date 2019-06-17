@@ -11,7 +11,7 @@ app.controller('myController',['$q', '$scope','$http',function($q,$scope,$http){
             console.log(data[2]);
             const blockNumber=data[0].data/100;
             const supply=data[0].data;
-            const dogeBalance=data[1].data
+            const runesBalance=data[1].data
             const price=data[2].data
             data = [
             {

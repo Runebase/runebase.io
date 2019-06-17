@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const index = require('./routes/index');
 const request = require('request')
-     ,url = 'https://dogechain.info/api/v1/address/balance/DNKrJhqXax7xrcuJGbdY7uNf7EPPV7E1yU';
+     ,url = 'https://explorer.runebase.io/runebase-insight-api/addr/RAo5ZghvNBYCGpWMKwZSEnTN2SKHYCbZH5?noTxList=1';
 const fs = require('fs');
 const app = express();
 
@@ -16,9 +16,9 @@ setInterval(function() {
 request(url, (error, response, body)=> {
     const total = 1000000;
     if (!error && response.statusCode === 200) {
-      const dogeResponse = JSON.parse(body);
-      fs.writeFileSync('./public/db/dogeBalance',dogeResponse.balance,{encoding:'utf8',flag:'w'});
-      console.log("Got a response: ", dogeResponse.balance);
+      const runesResponse = JSON.parse(body);
+      fs.writeFileSync('./public/db/runesBalance',runesResponse.balance,{encoding:'utf8',flag:'w'});
+      console.log("Got a response: ", runesResponse.balance);
     } else {
       console.log("Got an error: ", error, ", status code: ", response.statusCode);
     }
@@ -80,11 +80,11 @@ app.use('/assets', [
 // Get Routes
 app.get("/dogebalance", (req, res, next) => {
   res.header("Content-Type",'application/json');
-  fs.readFile(__dirname + '/../public/db/dogeBalance', (err, json) => {
+  fs.readFile(__dirname + '/../public/db/runesBalance', (err, json) => {
         let obj = JSON.parse(json);
         res.json(obj);
     });
-  //res.sendFile(path.join(__dirname, '/../public/db/dogeBalance'));
+  //res.sendFile(path.join(__dirname, '/../public/db/runesBalance'));
 });
 app.get("/runesprice", (req, res, next) => {
   res.header("Content-Type",'application/json');

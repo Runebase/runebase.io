@@ -12,11 +12,11 @@ exports.doge = function(req, res, next) {
     return trimmedNumber;
   }
 
-  fs.readFile('./public/db/dogeBalance', (err, data) => {
+  fs.readFile('./public/db/runesBalance', (err, data) => {
     if (err) throw err;
     const total = 1000000;
-    res.dogeBalance = parseFloat(data).toString();
-    res.dogeProgress = calcPercent(res.dogeBalance, total)+"%";
+    res.runesBalance = parseFloat(data).toString();
+    res.runesProgress = calcPercent(res.runesBalance, total)+"%";
     next();
   });
 
