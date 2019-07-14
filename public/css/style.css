@@ -885,3 +885,28 @@ body {
 .specifications p{
   margin: 0;
 }
+.roundImage{
+  border-radius: 50%;
+  border: 3px solid black;
+}
+.fa-linkedin:hover{
+  color: #fff;
+}
+.fa-linkedin{
+  color: #4875B4;
+}
+.fa-facebook:hover{
+  color: #fff;
+}
+.fa-facebook{
+  color: #3b5998;
+}
+.fa-telegram:hover{
+  color: #fff;
+}
+.fa-telegram{
+  color: #0088cc;
+}
+.socialIcon{
+  display:inline-block;
+}
