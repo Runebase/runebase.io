@@ -1,0 +1,24 @@
+html
+  head
+    meta(charset='utf-8')
+    title Task Board
+    link(rel='stylesheet', href='/assets/topScripts.css')
+    link(rel='shortcut icon', type='image/png', href='/assets/runebase.png')
+    link(rel='stylesheet', href='/assets/style.css')
+  body(ng-controller='MainCtrl', data-target='#navmenu')
+  include includes/menu.pug
+  #particles-js
+  section#tasks.tasks.shadow-w
+          .community_overlay
+            .container.mx-auto.text-center
+              .row.center-block#tasklist
+                .col.loader
+                  .spinner-grow.text-secondary
+                      span.sr-only
+              .row.mt-5
+                .col
+                  a.w-100.walletstyle(href='https://trello.com/b/uTTKCXWU/runebase' target='_blank') View This Board On Trello
+          script(src='/assets/bottomScripts.js')
+          script(src='/assets/custom.js')
+          script(src='/assets/menu.js')
+          script(src='/assets/trello.js')

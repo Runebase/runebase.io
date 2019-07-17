@@ -20,6 +20,16 @@ $(document).ready(function(){
 
     //Goto Section event
     $( "a.nav-link" ).click(function( event ) {
+        if (($(this).attr("href")).startsWith("/")) {
+          event.preventDefault();
+          window.location.href = window.location.protocol + "//" + window.location.host + $(this).attr("href");
+          return;
+        }
+        if (window.location.pathname  == "/tasks" || window.location.pathname  == "/wallet") {
+          event.preventDefault();
+          window.location.href = window.location.protocol + "//" + window.location.host + "/" + $(this).attr("href");
+          return;
+        }
         event.preventDefault();
         $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top + (-72) }, 500);
         $(".dappoverlay").fadeOut();

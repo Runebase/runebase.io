@@ -18,7 +18,10 @@ router.use(userAgent);
 router.use(doge);
 
 router.get('/wallet', (req, res, next) => {
-    res.render('wallet', { title: 'wallet' });
+    res.render('wallet', { title: 'Wallet' });
+})
+router.get('/tasks', (req, res, next) => {
+    res.render('tasks', { title: 'Tasks' });
 })
 
 router.get('/', function (req, res) {
