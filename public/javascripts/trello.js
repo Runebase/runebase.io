@@ -58,7 +58,7 @@ $(document).ready(function(){
 					    'class' : 'trelloLink',
 					    'href' : trelloCardInfo.url,
 					    'data-id' : trelloCardInfo.id,
-					  }).text(trelloCardInfo.name)
+					  }).text( '- ' + trelloCardInfo.name)
 					}).appendTo(".trelloCard[data-id='" + trelloListInfo.id +"']");
 				});
 			  });
