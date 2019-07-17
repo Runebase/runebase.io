@@ -911,3 +911,6 @@ body {
 .socialIcon{
   display:inline-block;
 }
+.trelloLink:hover{
+  color:white;
+}
