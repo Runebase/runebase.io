@@ -68,7 +68,7 @@
     "bip39": "^2.5.0",
     "bitcoinjs-lib": "^3.3.2",
     "ethjs-abi": "^0.2.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "css-loader": "^0.28.11",
     "runebase-opcodes": "^1.0.0",
     "runebasejs-lib": "0.0.7",
