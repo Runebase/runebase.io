@@ -128,7 +128,8 @@ const Header = () => {
           <Button size='icon' variant='ghost'
             onClick={() => setTheme(`${theme == 'light' ? 'dark' : 'light'}`)}
           >
-            {theme == 'light' ? <MoonIcon /> : <SunIcon />}
+            {theme == 'light' && <MoonIcon className="size-5" />}
+            {theme == 'dark' && <SunIcon className="size-5" />}
           </Button>
         </div>
       </nav>
