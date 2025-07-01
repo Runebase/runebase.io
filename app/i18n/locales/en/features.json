@@ -1,0 +1,23 @@
+{
+  "decentralized": {
+    "text": "Decentralized",
+    "description": "Users don’t have to put trust in a central authority. decentralized networks are run by the participants themselves. This means that the entire system becomes more distributed."
+  },
+  "smartContracts": {
+    "text": "Smart-Contracts",
+    "description": "A protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties."
+  },
+  "stakingRewards": {
+    "text": "Staking Rewards",
+    "description": "Staking is the process of holding funds in a cryptocurrency wallet to support the operations of a blockchain network. Users are rewarded simply for holding coins."
+  },
+  "carbonNeutral": {
+    "text": "Carbon Neutral",
+    "description": "The transaction confirmations is not done with hardware that requires alot of energy intake, but with already owned coins in the software wallet."
+  },
+  "community": {
+    "text": "Community",
+    "description": "Runebase has a positive and encouraging community with tangible impact on individual fulfillment. The community share similar values that cooperate to help accomplish several goals."
+  },
+  "downloadOn": "Download On"
+}

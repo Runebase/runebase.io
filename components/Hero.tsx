@@ -2,14 +2,18 @@
 
 import { cn } from "@/lib/utils";
 import { GameOfLifeGrid } from "./magicui/flickering-grid";
-import type { FC } from "react";
+import { useT } from '@/app/i18n/client';
 import { Button } from "./ui/button";
-import { FaApple, FaGooglePlay, FaWindows, FaAppStore, FaLinux } from "react-icons/fa";
+import { FaApple, FaGooglePlay, FaWindows, FaLinux } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+
+import type { FC } from "react";
 
 const Hero: FC = () => {
 
   const router = useRouter();
+
+  const { t } = useT('hero');
 
   const downloadLinks = [
     { icon: <FaWindows className="size-5" />, href: "https://discord.com/invite/uTUXr43", label: "Windows" },
@@ -46,7 +50,7 @@ const Hero: FC = () => {
           Runebase
         </h1>
         <p className="w-full bg-base-100 opacity-100 text-center text-2xl rounded-md leading-relaxed">
-          Smart-Contract Platform
+          {t('description')}
         </p>
 
         {/* Download Buttons */}
@@ -61,7 +65,7 @@ const Hero: FC = () => {
             >
               {wallet.icon}
               <div className="flex flex-col space-y-0">
-                <span className="text-[8px]">Download on</span> <span className="font-bold">{wallet.label}</span>
+                <span className="text-[8px]">{t('downloadOn')}</span> <span className="font-bold">{wallet.label}</span>
               </div>
             </Button>
           ))}
