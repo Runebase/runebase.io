@@ -1,0 +1,8 @@
+{
+  "role": {
+    "core": "Core Developer",
+    "graphicDesigner": "Graphic Designer",
+    "web": "Web Developer",
+    "discordMod": "Discord Moderator"
+  }
+}

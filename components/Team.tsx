@@ -12,12 +12,15 @@ import ph03nix from "@/components/assets/images/team/ph03nix.png";
 import smiley from "@/components/assets/images/team/smiley.png";
 
 import type { FC } from "react"
+import { useT } from "@/app/i18n/client";
 
 export const Team: FC = () => {
+  const { t } = useT('team')
+
   const teamMembers = [
     {
       name: 'Jonas Collier',
-      role: 'Core Developer',
+      role: t('role.core'),
       socials: [
         { linkedIn: 'jonas-collier-86835b86' },
         { telegram: 'Bagosan' }
@@ -26,25 +29,25 @@ export const Team: FC = () => {
     },
     {
       name: 'Jonas Dahlberg',
-      role: 'Graphical Design',
+      role: t('role.graphicDesigner'),
       socials: [{ telegram: 'eYm1990' }],
       image: jonas_dahlberg,
     },
     {
       name: 'Mael Bomane',
-      role: 'Web Developer',
+      role: t('role.web'),
       socials: [{ telegram: 'mbomane' }],
       image: mael_bomane,
     },
     {
       name: 'Ph03nix',
-      role: 'Discord Moderator',
+      role: t('role.discordMod'),
       socials: [],
       image: ph03nix,
     },
     {
       name: 'Smiley',
-      role: 'Discord Moderator',
+      role: t('role.discordMod'),
       socials: [],
       image: smiley,
     },
