@@ -1,9 +1,8 @@
-
 'use client'
 
 import i18next from './i18next'
-import { useParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useParams, useRouter, usePathname } from 'next/navigation'
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import { useTranslation, UseTranslationOptions } from 'react-i18next'
 import type { TFunction, Namespace } from 'i18next'
 
@@ -16,13 +15,15 @@ export function useT(
   t: TFunction
   i18n: typeof i18next
   ready: boolean
+  currentLanguage: string
+  changeLanguage: (lang: string) => Promise<void>
 } {
   const params = useParams()
-  const lng = typeof params?.lng === 'string' ? params.lng : undefined
+  const pathname = usePathname()
+  const router = useRouter()
 
-  if (!lng) {
-    throw new Error('useT is only available inside /app/[lng]')
-  }
+  const lng = typeof params?.lng === 'string' ? params.lng : undefined
+  if (!lng) throw new Error('useT is only available inside /app/[lng]')
 
   if (runsOnServerSide && i18next.resolvedLanguage !== lng) {
     i18next.changeLanguage(lng)
@@ -41,6 +42,32 @@ export function useT(
     }, [lng])
   }
 
-  return useTranslation(ns, options)
-}
+  const { t, i18n, ready } = useTranslation(ns, options)
 
+  const currentLanguage = useMemo(() => i18n.language, [i18n.language])
+
+  const changeLanguage = useCallback(
+    async (lang: string) => {
+      const oldLang = i18n.language
+      await i18n.changeLanguage(lang)
+
+      if (!pathname) return
+
+      // Replace the locale in the pathname
+      const updatedPath = pathname.startsWith(`/${oldLang}/`)
+        ? pathname.replace(`/${oldLang}/`, `/${lang}/`)
+        : pathname.replace(`/${oldLang}`, `/${lang}`)
+
+      router.push(updatedPath)
+    },
+    [i18n, router, pathname]
+  )
+
+  return {
+    t,
+    i18n,
+    ready,
+    currentLanguage,
+    changeLanguage,
+  }
+}

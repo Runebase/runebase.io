@@ -6,37 +6,52 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes"
 import logo from "@/app/icon.png";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+type Checked = DropdownMenuCheckboxItemProps["checked"];
+
 import { FaXTwitter } from "react-icons/fa6";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { LanguagesIcon, MoonIcon, SunIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FaDiscord, FaGithub, FaTelegramPlane } from "react-icons/fa";
+import { useT } from "@/app/i18n/client";
 
-const links: {
-  href: string;
-  label: string;
-}[] = [
-    { href: "https://bots.runebase.io", label: "Bots" },
-    { href: "https://runesx.com", label: "RunesX" },
-    { href: "/docs", label: "Documentation" },
-    { href: "https://downloads.runebase.io/paper.pdf", label: "Whitepaper" },
-  ];
 
-const socialLinks = [
-  { icon: <FaDiscord className="size-5" />, href: "https://discord.com/invite/uTUXr43", label: "Discord" },
-  { icon: <FaTelegramPlane className="size-5" />, href: "https://t.me/runebase_runes", label: "Telegram" },
-  { icon: <FaXTwitter className="size-5" />, href: "https://x.com/Runebase_Tweet", label: "Twitter" },
-  { icon: <FaGithub className="size-5" />, href: "https://github.com/runebase", label: "Github" },
-];
 
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const { t, changeLanguage, currentLanguage } = useT('header');
+
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
+
+  const links: {
+    href: string;
+    label: string;
+  }[] = [
+      { label: t('bots'), href: "https://bots.runebase.io" },
+      { label: t('runesx'), href: "https://runesx.com" },
+      { label: t('docs'), href: "/docs" },
+      { label: t('whitepaper'), href: "https://downloads.runebase.io/paper.pdf" },
+    ];
+
+  const socialLinks = [
+    { icon: <FaDiscord className="size-5" />, href: "https://discord.com/invite/uTUXr43", label: "Discord" },
+    { icon: <FaTelegramPlane className="size-5" />, href: "https://t.me/runebase_runes", label: "Telegram" },
+    { icon: <FaXTwitter className="size-5" />, href: "https://x.com/Runebase_Tweet", label: "Twitter" },
+    { icon: <FaGithub className="size-5" />, href: "https://github.com/runebase", label: "Github" },
+  ];
 
   const { setTheme, theme } = useTheme()
 
@@ -122,9 +137,37 @@ const Header = () => {
           ))}
         </div>
 
-        {/* theme switcher */}
         <div className="hidden lg:flex lg:justify-end lg:flex-1 space-x-4">
+          {/* language switcher */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button size='icon' variant='ghost'>
+                <LanguagesIcon />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuCheckboxItem
+                checked={currentLanguage == 'en'}
+                onCheckedChange={() => changeLanguage('en')}
+              >
+                English
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem
+                checked={currentLanguage == 'de'}
+                onCheckedChange={() => changeLanguage('de')}
+              >
+                German
+              </DropdownMenuCheckboxItem>
+              <DropdownMenuCheckboxItem
+                checked={currentLanguage == 'fr'}
+                onCheckedChange={() => changeLanguage('fr')}
+              >
+                French
+              </DropdownMenuCheckboxItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
 
+          {/* theme switcher */}
           <Button size='icon' variant='ghost'
             onClick={() => setTheme(`${theme == 'light' ? 'dark' : 'light'}`)}
           >

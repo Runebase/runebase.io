@@ -1,0 +1,24 @@
+{
+  "decentralized": {
+    "text": "Décentralisé",
+    "description": "Aucune autorité centrale. Aucun intermédiaire. Les réseaux décentralisés sont portés par leurs utilisateurs, rendant le système plus ouvert, résilient et sécurisé."
+  },
+  "smartContracts": {
+    "text": "Smart Contracts",
+    "description": "Des accords numériques qui s’exécutent automatiquement. Les smart contracts simplifient les échanges, assurant confiance et transparence — sans intermédiaire."
+  },
+  "stakingRewards": {
+    "text": "Récompenses de Staking",
+    "description": "Soutenez le réseau. Gagnez des récompenses. En conservant vos actifs dans un portefeuille compatible, vous contribuez à la sécurité de la blockchain — et êtes récompensé."
+  },
+  "carbonNeutral": {
+    "text": "Neutre en Carbone",
+    "description": "Une validation des transactions sans surconsommation d’énergie. Vos jetons déjà détenus dans le portefeuille font le travail — une approche efficace et durable."
+  },
+  "community": {
+    "text": "Communauté",
+    "description": "Au-delà de la technologie — Runebase, c’est une communauté. Dynamique, engagée, humaine. Des valeurs partagées, un impact réel."
+  }
+}
+
+

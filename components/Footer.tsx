@@ -1,8 +1,11 @@
+"use client"
+
 import Image from "next/image";
 import React from "react";
 import { FaDiscord, FaGithub, FaTelegramPlane } from "react-icons/fa";
 import logo from '@/app/icon.png'
 import { FaXTwitter } from "react-icons/fa6";
+import { useT } from "@/app/i18n/client";
 
 interface FooterProps {
   sections?: Array<{
@@ -22,26 +25,6 @@ interface FooterProps {
   }>;
 }
 
-const defaultSections = [
-  {
-    title: "Ecosystem",
-    links: [
-      { name: "Bots", href: "https://bots.runebase.io" },
-      { name: "Documentation", href: "/docs" },
-      { name: "Whitepaper", href: "https://downloads.runebase.io/paper.pdf" },
-      { name: "RuneX", href: "https://runesx.com" },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      { name: "Discord", href: "https://discord.com/invite/uTUXr43" },
-      { name: "Telegram", href: "https://t.me/runebase_runes" },
-      { name: "Twitter", href: "https://x.com/Runebase_Tweet" },
-      { name: "Github", href: "https://github.com/runebase" },
-    ],
-  },
-];
 
 const defaultSocialLinks = [
   { icon: <FaDiscord className="size-5" />, href: "https://discord.com/invite/uTUXr43", label: "Discord" },
@@ -51,10 +34,31 @@ const defaultSocialLinks = [
 ];
 
 const Footer = ({
-  sections = defaultSections,
   socialLinks = defaultSocialLinks,
-  copyright = `© 2018 - ${new Date().getFullYear()} Runebase, All rights reserved.`,
 }: FooterProps) => {
+  const { t } = useT('footer')
+  const copyright = `© 2018 - ${new Date().getFullYear()} Runebase, ${t('copyright')}.`
+  const sections = [
+    {
+      title: t('ecosystem'),
+      links: [
+        { name: "Bots", href: "https://bots.runebase.io" },
+        { name: "Documentation", href: "/docs" },
+        { name: "Whitepaper", href: "https://downloads.runebase.io/paper.pdf" },
+        { name: "RuneX", href: "https://runesx.com" },
+      ],
+    },
+    {
+      title: t('community'),
+      links: [
+        { name: "Discord", href: "https://discord.com/invite/uTUXr43" },
+        { name: "Telegram", href: "https://t.me/runebase_runes" },
+        { name: "Twitter", href: "https://x.com/Runebase_Tweet" },
+        { name: "Github", href: "https://github.com/runebase" },
+      ],
+    },
+  ];
+
   return (
 
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl w-full mx-auto">
@@ -69,7 +73,7 @@ const Footer = ({
           </div>
 
           <p className="text-muted-foreground max-w-sm text-sm">
-            Smart-Contract Platform
+            {t('description')}
           </p>
 
           <ul className="flex flex-wrap items-center gap-4">

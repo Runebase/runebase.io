@@ -1,23 +1,23 @@
 {
   "decentralized": {
     "text": "Decentralized",
-    "description": "Users don’t have to put trust in a central authority. decentralized networks are run by the participants themselves. This means that the entire system becomes more distributed."
+    "description": "No central authority. No middlemen. Decentralized networks are powered by their users, making the entire system more open, resilient, and secure."
   },
   "smartContracts": {
-    "text": "Smart-Contracts",
-    "description": "A protocol intended to digitally facilitate, verify, or enforce the negotiation or performance of a contract. Smart contracts allow the performance of credible transactions without third parties."
+    "text": "Smart Contracts",
+    "description": "Digital agreements that execute automatically. Smart contracts streamline transactions, ensuring trust and transparency—without the need for third parties."
   },
   "stakingRewards": {
     "text": "Staking Rewards",
-    "description": "Staking is the process of holding funds in a cryptocurrency wallet to support the operations of a blockchain network. Users are rewarded simply for holding coins."
+    "description": "Support the network. Earn rewards. By holding your assets in a compatible wallet, you help secure the blockchain—and get rewarded for it."
   },
   "carbonNeutral": {
     "text": "Carbon Neutral",
-    "description": "The transaction confirmations is not done with hardware that requires alot of energy intake, but with already owned coins in the software wallet."
+    "description": "Transaction validation without the energy drain. Instead of power-hungry hardware, coins already in your wallet do the work—efficient and eco-friendly."
   },
   "community": {
     "text": "Community",
-    "description": "Runebase has a positive and encouraging community with tangible impact on individual fulfillment. The community share similar values that cooperate to help accomplish several goals."
-  },
-  "downloadOn": "Download On"
+    "description": "More than technology—Runebase is people. A vibrant, values-driven community working together to build, grow, and uplift. Real impact, human-first."
+  }
 }
+
