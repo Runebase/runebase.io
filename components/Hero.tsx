@@ -1,18 +1,16 @@
 "use client"
 
-import { cn } from "@/lib/utils";
-import { GameOfLifeGrid } from "./magicui/flickering-grid";
-import { useT } from '@/app/i18n/client';
-import { Button } from "./ui/button";
-import { FaApple, FaGooglePlay, FaWindows, FaLinux } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import { FaApple, FaGooglePlay, FaWindows, FaLinux } from "react-icons/fa";
+import { cn } from "@/lib/utils";
+import { useT } from '@/app/i18n/client';
+import { GameOfLifeGrid } from "@/components/magicui/flickering-grid";
+import { Button } from "@/components/ui/button";
 
 import type { FC } from "react";
 
 const Hero: FC = () => {
-
   const router = useRouter();
-
   const { t } = useT('hero');
 
   const downloadLinks = [

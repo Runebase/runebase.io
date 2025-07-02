@@ -5,27 +5,32 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes"
+
+import { FaXTwitter } from "react-icons/fa6";
+import { LanguagesIcon, MoonIcon, SunIcon } from "lucide-react";
+import { FaDiscord, FaGithub, FaTelegramPlane } from "react-icons/fa";
+
+import { cn } from "@/lib/utils";
+import { useT } from "@/app/i18n/client";
+
 import logo from "@/app/icon.png";
+
 import { Button } from "@/components/ui/button";
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
+
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
+import en from "@/components/assets/images/us.svg";
+import fr from "@/components/assets/images/fr.svg";
+import de from "@/components/assets/images/de.svg";
 
-import { FaXTwitter } from "react-icons/fa6";
-import { LanguagesIcon, MoonIcon, SunIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { FaDiscord, FaGithub, FaTelegramPlane } from "react-icons/fa";
-import { useT } from "@/app/i18n/client";
+import type { FC } from "react";
 
-
-
-const Header = () => {
+const Header: FC = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -41,7 +46,7 @@ const Header = () => {
     label: string;
   }[] = [
       { label: t('bots'), href: "https://bots.runebase.io" },
-      { label: t('runesx'), href: "https://runesx.com" },
+      { label: t('runesx'), href: "https://runesx.xyz" },
       { label: t('docs'), href: "/docs" },
       { label: t('whitepaper'), href: "https://downloads.runebase.io/paper.pdf" },
     ];
@@ -150,19 +155,19 @@ const Header = () => {
                 checked={currentLanguage == 'en'}
                 onCheckedChange={() => changeLanguage('en')}
               >
-                English
+                <Image src={en} alt='English' width={20} /> English
               </DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem
                 checked={currentLanguage == 'de'}
                 onCheckedChange={() => changeLanguage('de')}
               >
-                German
+                <Image src={de} alt='German' width={20} /> German
               </DropdownMenuCheckboxItem>
               <DropdownMenuCheckboxItem
                 checked={currentLanguage == 'fr'}
                 onCheckedChange={() => changeLanguage('fr')}
               >
-                French
+                <Image src={fr} alt='French' width={20} /> French
               </DropdownMenuCheckboxItem>
             </DropdownMenuContent>
           </DropdownMenu>
