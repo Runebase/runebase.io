@@ -70,7 +70,7 @@ export const GameOfLifeGrid: React.FC<GameOfLifeGridProps> = ({
     return count;
   };
 
-  const evolveGrid = (
+  const evolveGrid = useCallback((
     grid: Uint8Array,
     cols: number,
     rows: number
@@ -91,9 +91,9 @@ export const GameOfLifeGrid: React.FC<GameOfLifeGridProps> = ({
       }
     }
     return newGrid;
-  };
+  }, []);
 
-  const drawGrid = (
+  const drawGrid = useCallback((
     ctx: CanvasRenderingContext2D,
     grid: Uint8Array,
     cols: number,
@@ -115,7 +115,7 @@ export const GameOfLifeGrid: React.FC<GameOfLifeGridProps> = ({
         }
       }
     }
-  };
+  }, [gridGap, memoizedColor, squareSize]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -181,7 +181,7 @@ export const GameOfLifeGrid: React.FC<GameOfLifeGridProps> = ({
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [memoizedColor, squareSize, gridGap, width, height, isInView, updateInterval]);
+  }, [memoizedColor, squareSize, gridGap, width, height, isInView, updateInterval, drawGrid, evolveGrid]);
 
   return (
     <div

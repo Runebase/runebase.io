@@ -6,6 +6,7 @@ import { FaDiscord, FaGithub, FaTelegramPlane } from "react-icons/fa";
 import logo from '@/app/icon.png'
 import { FaXTwitter } from "react-icons/fa6";
 import { useT } from "@/app/i18n/client";
+import Link from "next/link";
 
 interface FooterProps {
   sections?: Array<{
@@ -63,28 +64,32 @@ const Footer = ({
 
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl w-full mx-auto">
       <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
-        {/* Left Section: Logo + Description + Socials */}
+        {/* Left Section */}
         <div className="flex flex-col gap-6">
+          {/* Logo */}
           <div className="flex items-center gap-2">
-            <a href="/">
+            <Link href="/">
               <Image src={logo} alt="Runebase Logo" title="Runebase Logo" className="h-8 w-8" />
-            </a>
+            </Link>
             <h2 className="text-xl font-semibold">Runebase</h2>
           </div>
 
+          {/* Description */}
           <p className="text-muted-foreground max-w-sm text-sm">
             {t('description')}
           </p>
 
+          {/* Social Links */}
           <ul className="flex flex-wrap items-center gap-4">
-            {socialLinks.map((social, idx) => (
-              <li key={idx} className="hover:text-primary font-medium">
-                <a href={social.href} aria-label={social.label}>
+            {socialLinks.map((social, socialIdx) => (
+              <li key={socialIdx} className="hover:text-primary font-medium">
+                <Link href={social.href} aria-label={social.label}>
                   {social.icon}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
+
         </div>
 
         {/* Right Section: Link Sections */}
@@ -95,7 +100,7 @@ const Footer = ({
               <ul className="text-muted-foreground space-y-3 text-sm">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx} className="hover:text-primary font-medium">
-                    <a href={link.href}>{link.name}</a>
+                    <Link href={link.href}>{link.name}</Link>
                   </li>
                 ))}
               </ul>

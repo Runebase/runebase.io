@@ -25,22 +25,24 @@ export function useT(
   const lng = typeof params?.lng === 'string' ? params.lng : undefined
   if (!lng) throw new Error('useT is only available inside /app/[lng]')
 
-  if (runsOnServerSide && i18next.resolvedLanguage !== lng) {
-    i18next.changeLanguage(lng)
-  } else {
-    const [activeLng, setActiveLng] = useState(i18next.resolvedLanguage)
+  const [activeLng, setActiveLng] = useState(i18next.resolvedLanguage)
 
-    useEffect(() => {
+  useEffect(() => {
+    if (!runsOnServerSide) {
       if (activeLng === i18next.resolvedLanguage) return
       setActiveLng(i18next.resolvedLanguage)
-    }, [activeLng])
+    }
+  }, [activeLng])
 
-    useEffect(() => {
+  useEffect(() => {
+    if (!runsOnServerSide) {
       if (i18next.resolvedLanguage !== lng) {
         i18next.changeLanguage(lng)
       }
-    }, [lng])
-  }
+    } else if (runsOnServerSide && i18next.resolvedLanguage !== lng) {
+      i18next.changeLanguage(lng)
+    }
+  }, [lng])
 
   const { t, i18n, ready } = useTranslation(ns, options)
 
