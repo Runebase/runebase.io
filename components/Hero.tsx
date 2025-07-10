@@ -14,9 +14,9 @@ const Hero: FC = () => {
   const { t } = useT('hero');
 
   const downloadLinks = [
-    { icon: <FaWindows className="size-5" />, href: "https://discord.com/invite/uTUXr43", label: "Windows" },
-    { icon: <FaApple className="size-5" />, href: "https://t.me/runebase_runes", label: "OSX" },
-    { icon: <FaLinux className="size-5" />, href: "https://x.com/Runebase_Tweet", label: "Linux" },
+    { icon: <FaWindows className="size-5" />, href: "https://github.com/Runebase/runebase/releases/latest", label: "Windows" },
+    { icon: <FaApple className="size-5" />, href: "https://github.com/Runebase/runebase/releases/latest", label: "OSX" },
+    { icon: <FaLinux className="size-5" />, href: "https://github.com/Runebase/runebase/releases/latest", label: "Linux" },
     {
       icon: <FaGooglePlay className="size-5" />,
       href: "https://play.google.com/store/apps/details?id=io.runebase.runebaselitewallet",
