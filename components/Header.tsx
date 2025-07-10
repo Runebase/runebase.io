@@ -80,10 +80,10 @@ const Header: FC = () => {
               src={logo}
               alt="runebase logo"
               className="rounded-full w-12 h-12"
-              //placeholder="blur"
               priority={true}
               width={50}
               height={50}
+              unoptimized
             />
             <span className="ml-2 font-extrabold text-primary text-lg tracking-wide">Runebase</span>
           </Link>
@@ -185,7 +185,7 @@ const Header: FC = () => {
       {/* Mobile menu, show/hide based on menu state. */}
       <div className={`relative z-50 ${isOpen ? "h-screen" : "hidden"}`}>
         <div
-          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-background sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
+          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-background max-w-screen sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
         >
           {/* logo/name on small screens */}
           <div className="flex items-center justify-between">
@@ -197,11 +197,11 @@ const Header: FC = () => {
               <Image
                 src={logo}
                 alt="Runebase Logo"
-                className="rounded-full w-8 transform -scale-x-100"
-                //placeholder="blur"
+                className="rounded-full w-12 h-12"
                 priority={true}
                 width={32}
                 height={32}
+                unoptimized
               />
               <span className="font-extrabold text-lg">Runebase</span>
             </Link>
@@ -229,8 +229,8 @@ const Header: FC = () => {
           </div>
 
           {/* Your links on small screens */}
-          <div className="flow-root mt-6">
-            <div className="py-4">
+          <div className="flow-root mt-6 ">
+            <div className="py-4 w-full">
               <div className="flex flex-col gap-y-4 items-start">
                 {links.map((link) => (
                   <Link
