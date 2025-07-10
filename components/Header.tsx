@@ -48,7 +48,7 @@ const Header: FC = () => {
       { label: t('bots'), href: "https://bots.runebase.io" },
       { label: t('runesx'), href: "https://runesx.xyz" },
       { label: t('docs'), href: "/docs" },
-      { label: t('whitepaper'), href: "https://downloads.runebase.io/paper.pdf" },
+      //{ label: t('whitepaper'), href: "https://downloads.runebase.io/paper.pdf" },
     ];
 
   const socialLinks = [
