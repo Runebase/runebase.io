@@ -66,11 +66,11 @@ const Header: FC = () => {
       "bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
     )}>
       <nav
-        className="container flex items-center justify-between px-8 py-4 mx-auto"
+        className="w-full flex items-center justify-between px-8 py-4 mx-auto"
         aria-label="Global"
       >
         {/* logo/name on large screens */}
-        <div className="flex lg:flex-1">
+        <div className="flex">
           <Link
             className="flex items-center gap-2 shrink-0 "
             href="/"
@@ -102,32 +102,9 @@ const Header: FC = () => {
         </div>
 
         {/* burger button to open menu on mobile */}
-        <div className="flex lg:hidden">
-          <Button
-            size="lg"
-            variant="secondary"
-            onClick={() => setIsOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 text-base-content"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          </Button>
-        </div>
 
         {/* links on large screens */}
-        <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
+        <div className="hidden md:flex md:flex-1 md:justify-center md:gap-12">
           {links.map((link) => (
             <Link
               href={link.href}
@@ -142,7 +119,32 @@ const Header: FC = () => {
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:justify-end lg:flex-1 space-x-4">
+        <div className="hidden md:flex ml-auto items-center space-x-4">
+          {/* burger menu */}
+          <div className="flex lg:hidden">
+            <Button
+              size="lg"
+              variant="secondary"
+              onClick={() => setIsOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6 text-base-content"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </Button>
+          </div>
+
           {/* language switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
