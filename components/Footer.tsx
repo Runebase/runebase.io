@@ -46,7 +46,7 @@ const Footer = ({
         { name: "Bots", href: "https://bots.runebase.io" },
         { name: "Documentation", href: "/docs" },
         { name: "Whitepaper", href: "https://downloads.runebase.io/paper.pdf" },
-        { name: "RuneX", href: "https://runesx.com" },
+        { name: "RunesX", href: "https://runesx.xyz" },
       ],
     },
     {
