@@ -104,7 +104,7 @@ const Header: FC = () => {
         {/* burger button to open menu on mobile */}
 
         {/* links on large screens */}
-        <div className="hidden md:flex md:flex-1 md:justify-center md:gap-12">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-12">
           {links.map((link) => (
             <Link
               href={link.href}
