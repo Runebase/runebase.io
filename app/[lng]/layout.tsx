@@ -20,9 +20,37 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ lng?: string }> }): Promise<Metadata> {
   const { lng } = await params;
   const { t } = await getT(lng);
+  const keywords: string[] = ['Runebase', 'Blockchain', 'EVM', 'Layer-1', 'Proof-of-Stake', 'Memecoin']
   return {
-    title: t("title"),
+    title: `Runebase | ${t('title')}`,
     description: t("description"),
+    keywords: keywords,
+    openGraph: {
+      title: `Runebase | ${t('title')}`,
+      description: t("description"),
+      url: `https://runebase.io/`,
+      siteName: 'Runebase',
+      // If you add an opengraph-image.(jpg|jpeg|png|gif) image to the /app folder, you don't need the code below
+      // images: [
+      //   {
+      //     url: `https://${config.domainName}/share.png`,
+      //     width: 1200,
+      //     height: 660,
+      //   },
+      // ],
+      locale: "en_US",
+      type: "website",
+    },
+
+    twitter: {
+      title: `Runebase | ${t('title')}`,
+      description: t("description"),
+      // If you add an twitter-image.(jpg|jpeg|png|gif) image to the /app folder, you don't need the code below
+      // images: [openGraph?.image || defaults.og.image],
+      card: "summary_large_image",
+      creator: "@mael_bomane",
+    },
+
   };
 }
 
