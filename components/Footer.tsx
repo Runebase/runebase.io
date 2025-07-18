@@ -1,3 +1,4 @@
+// components/ui/Footer.tsx
 "use client"
 
 import Image from "next/image";

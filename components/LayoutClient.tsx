@@ -1,3 +1,4 @@
+// components/ui/LayoutClient.tsx
 "use client"
 
 import NextTopLoader from "nextjs-toploader";
