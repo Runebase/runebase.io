@@ -120,7 +120,7 @@ const Header: FC = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex ml-auto items-center space-x-4">
+        <div className="flex ml-auto items-center space-x-4">
           {/* burger menu */}
           <div className="flex lg:hidden">
             <Button
